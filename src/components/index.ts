@@ -1,0 +1,10 @@
+export { default as Welcome } from './Welcome.astro';
+export { default as Nosotros } from './Nosotros.astro';
+export { default as Logros } from './Logros.astro';
+export { default as Reconocimientos } from './Reconocimientos.astro';
+export { default as Directiva } from './Directiva.astro';
+export { default as Aliados } from './Aliados.astro';
+export { default as ProximosEventos } from './ProximosEventos.astro';
+export { default as Noticias } from './Noticias.astro';
+export { default as PreguntasFrecuentes } from './PreguntasFrecuentes.astro';
+export { default as Contactanos } from './Contactanos.astro';

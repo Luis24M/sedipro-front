@@ -1,16 +1,25 @@
+---
+import '@/styles/global.css';
+import Footer from '@/components/Footer.astro';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/png" href="/logo.png" />
+		<link rel="icon" href="/logo.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+		<title>Sedipro UNT</title>
 	</head>
-	<body>
+	<body class="bg-primary-50 min-h-screen">
 		<slot />
 	</body>
+	<Footer />
 </html>
 
 <style>

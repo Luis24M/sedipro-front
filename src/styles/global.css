@@ -1,0 +1,98 @@
+/* 1. PRIMERO: La fuente (siempre arriba de todo) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* 2. SEGUNDO: Tailwind */
+@import "tailwindcss";
+
+/* 3. TERCERO: Tu configuración del tema */
+@theme {
+  /* --- TIPOGRAFÍA --- */
+  --font-sans: "Inter", sans-serif;
+
+  /* --- COLORES PRIMARY --- */
+  --color-primary-50: #EBF1FD;
+  --color-primary-100: #b4c3e7;
+  --color-primary-200: #6987cf;
+  --color-primary-300: #3454a1;
+  --color-primary-400: #29427e;
+  --color-primary-500: #1d2f5a;
+
+  /* --- COLORES SECONDARY --- */
+  --color-secondary-100: #979ad4;
+  --color-secondary-200: #6368bf;
+  --color-secondary-300: #3f449a;
+  --color-secondary-400: #2a2d66;
+  --color-secondary-500: #191a3c;
+
+  /* --- COLORES NEUTRAL --- */
+  --color-neutral-100: #ededed;
+  --color-neutral-200: #d8d8d8;
+  --color-neutral-300: #c4c4c4;
+  --color-neutral-400: #afafaf;
+  --color-neutral-500: #9a9a9a;
+  --color-neutral-600: #868686;
+  --color-neutral-700: #717171;
+  --color-neutral-800: #5c5c5c;
+  --color-neutral-900: #484848;
+  --color-neutral-1000: #333333;
+
+  /* --- COLORES ACCENT --- */
+  --color-accent-50: #cf93dd;
+  --color-accent-100: #cf93dd; 
+  --color-accent-200: #b75dcd;
+  --color-accent-300: #9636ad;
+  --color-accent-400: #672577;
+  --color-accent-500: #3c1645;
+
+  /* --- STATUS COLORS --- */
+  --color-red-100: #dc3545;
+  --color-red-200: #a21c29;
+  --color-yellow-100: #ffc107;
+  --color-yellow-200: #b78900;
+  --color-green-100: #85e29a;
+  --color-green-200: #28a745;
+
+  /* --- LIGHT BLUE --- */
+  --color-light-blue-50: #E6F4FF;
+  --color-light-blue-100: #B0DEFF;
+  --color-light-blue-200: #8ACEFF;
+  --color-light-blue-300: #54B8FF;
+  --color-light-blue-400: #33AAFF;
+  --color-light-blue-500: #0095FF;
+
+  /* --- TAMAÑOS DE TEXTO --- */
+  --text-32: 32px; 
+  --text-28: 28px;
+  --text-24: 24px;
+  --text-20: 20px;
+  --text-18: 18px;
+  --text-16: 16px;
+  --text-14: 14px;
+  --text-12: 12px;
+}
+
+/* --- UTILITIES --- */
+@utility text-h1 {
+  font-size: var(--text-32);
+  font-weight: 700;
+}
+@utility text-h2 {
+  font-size: var(--text-28);
+  font-weight: 600;
+}
+@utility text-h3 {
+  font-size: var(--text-24);
+  font-weight: 600;
+}
+@utility text-h4 {
+  font-size: var(--text-20);
+  font-weight: 500;
+}
+@utility text-normal-semibold {
+  font-size: var(--text-18);
+  font-weight: 600;
+}
+
+* {
+  font-family: var(--font-sans);
+}

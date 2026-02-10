@@ -1,0 +1,15 @@
+---
+import { AliadosCarousel } from '@/components/ui/AliadosCarousel';
+import Title from '@/components/ui/Title.astro';
+import { getPartners } from '@/services/partner.service';
+
+const partners = await getPartners();
+---
+
+<section class="bg-white pb-24">
+  <div class="container mx-auto px-4">
+    <Title title="Aliados" />
+
+    <AliadosCarousel client:visible partners={partners} />
+  </div>
+</section>

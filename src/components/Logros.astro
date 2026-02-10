@@ -1,0 +1,103 @@
+---
+import type { Logro } from "@/interfaces/logros.interface";
+
+interface Props {
+  items: Logro[];
+}
+
+const { items = [] } = Astro.props as Props;
+---
+
+
+<section class="w-full max-w-[1440px] h-[118px] mx-auto flex items-center px-[98px] bg-white">
+  <h2 class="font-poppins font-bold text-xl border-b-2 border-[#7F59F8] pb-1 tracking-normal">
+    LOGROS
+  </h2>
+</section>
+
+
+<section class="w-full max-w-[1440px] mx-auto bg-white px-[98px]">
+
+  <div class="cards-grid max-w-[1244px] pt-8 pb-24">
+    {items.map((logro, index) => (
+      <article
+        class={`card
+          w-[172px] h-[197px] rounded-xl
+          flex flex-col items-center justify-center gap-4
+          bg-[#EDEDED] px-2 py-4
+          transition-all duration-300
+          hover:-translate-y-2 hover:cursor-pointer
+          ${index === 4 ? 'last-card' : ''}
+        `}
+        style="
+          box-shadow:
+            0px 2px 16px 0px #7F59F81F,
+            0px 7px 10px 0px #7F59F824,
+            0px 4px 5px 0px #7F59F81A;
+        "
+      >
+        <strong class="font-poppins font-bold text-[18px] leading-none text-center text-[#1D2F5A]">
+          {logro.number}
+        </strong>
+
+        <span
+          class="text-[1.8rem] leading-none block"
+          role="img"
+          aria-label={logro.label}
+          set:html={logro.icon}
+        />
+
+        <p class="font-poppins font-normal text-[14px] leading-none text-center text-[#3E3232]">
+          {logro.label}
+        </p>
+      </article>
+    ))}
+  </div>
+
+</section>
+
+<style>
+ 
+  .cards-grid {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    gap: 24px;
+    grid-template-columns: repeat(2, 172px);
+  }
+
+  .last-card {
+    grid-column: 1 / -1;
+  }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cards-grid {
+    grid-template-columns: repeat(6, 100px);
+    gap: 16px;
+  }
+
+  .card:nth-child(1) { grid-column: 1 / 3; }
+  .card:nth-child(2) { grid-column: 3 / 5; }
+  .card:nth-child(3) { grid-column: 5 / 7; }
+  .card:nth-child(4) { grid-column: 2 / 4; }
+  .card:nth-child(5) { grid-column: 4 / 6; }
+
+  .last-card {
+    grid-column: 4 / 6;
+  }
+}
+
+  @media (min-width: 1024px) {
+    .cards-grid {
+      grid-template-columns: repeat(5, 172px);
+      gap: clamp(16px, 4vw, 96px);
+      justify-content: center;
+    }
+    .card:nth-child(n) {
+      grid-column: auto;
+    }
+    .last-card {
+      grid-column: auto;
+    }
+  }
+</style>

@@ -1,5 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import { Logros as logrosData } from "@/mocks/logros.mock";
+
 import {
 	Welcome,
 	Nosotros,
@@ -17,7 +19,7 @@ import {
 <Layout>
 	<Welcome />
 	<Nosotros />
-	<Logros />
+	<Logros items={logrosData} />
 	<Reconocimientos />
 	<Directiva />
 	<Aliados />

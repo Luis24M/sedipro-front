@@ -1,10 +1,15 @@
----
----
+<section class="relative h-screen w-full flex items-center justify-center text-center">
+  <!-- Imagen de fondo con overlay oscuro -->
+  <div class="absolute inset-0 z-0">
+    <img src="/Imagenes/Equipo_sedipro.png" class="w-full h-full object-cover" alt="Sedipro UNT" />
+    <div class="absolute inset-0 bg-black/50"></div> <!-- Filtro oscuro para que se lea el texto -->
+  </div>
 
-<main
-  class="flex justify-center items-center flex-col h-full bg-[url('/logo.png')]"
->
-  <div class="bg-primary-50/85 p-4 rounded-2xl">
-    <h1 class="text-h1">Welcome to Sedipro UNT</h1>
-    <h2 class="text-center">Estamos trabajando en ello...</h2>
-</main>
+  <!-- Contenido -->
+  <div class="relative z-10 text-white px-4">
+    <h1 class="text-5xl font-bold uppercase">Bienvenido a SEDIPRO UNT</h1>
+    <p class="mt-4 text-xl max-w-2xl mx-auto">
+      Creando nuevas experiencias mediante las buenas prácticas de Dirección de Proyectos.
+    </p>
+  </div>
+</section>

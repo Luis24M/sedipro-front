@@ -8,3 +8,4 @@ export { default as ProximosEventos } from './ProximosEventos.astro';
 export { default as Noticias } from './Noticias.astro';
 export { default as PreguntasFrecuentes } from './PreguntasFrecuentes.astro';
 export { default as Contactanos } from './Contactanos.astro';
+export { default as Footer } from './Footer.astro';

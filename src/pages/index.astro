@@ -1,5 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import { getLogros } from "@/services/logros.service";
+
 import {
 	Welcome,
 	Nosotros,
@@ -12,12 +14,14 @@ import {
 	PreguntasFrecuentes,
 	Contactanos
 } from '@/components';
+
+const logrosData = await getLogros();
 ---
 
 <Layout>
 	<Welcome />
 	<Nosotros />
-	<Logros />
+	<Logros items={logrosData} />
 	<Reconocimientos />
 	<Directiva />
 	<Aliados />

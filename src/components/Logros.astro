@@ -8,17 +8,17 @@ interface Props {
 const { items = [] } = Astro.props as Props;
 ---
 
-<!-- WRAPPER CON FONDO BLANCO COMPLETO -->
+
 <div class="w-full bg-white">
   
-  <!-- SECCIÓN TÍTULO -->
+
   <section class="w-full max-w-[1440px] h-[118px] mx-auto flex items-center px-[98px]">
     <h2 class="font-poppins font-bold text-xl border-b-2 border-[#7F59F8] pb-1 tracking-normal">
       LOGROS
     </h2>
   </section>
 
-  <!-- SECCIÓN CARDS -->
+
   <section class="w-full max-w-[1440px] mx-auto px-[98px] md:px-8 lg:px-[98px]">
     <div class="cards-grid max-w-[1244px] pt-8 pb-24">
       {items.map((logro, index) => (
@@ -38,7 +38,7 @@ const { items = [] } = Astro.props as Props;
               0px 4px 5px 0px #7F59F81A;
           "
         >
-          <strong class="font-poppins font-bold text-[18px] leading-none text-center text-[#1a1a1a]">
+          <strong class="font-poppins font-bold text-[18px] leading-none text-center text-[#1D2F5A]">
             {logro.number}
           </strong>
 
@@ -50,7 +50,7 @@ const { items = [] } = Astro.props as Props;
             {logro.icon}
           </span>
 
-          <p class="font-poppins font-normal text-[14px] leading-none text-center text-[#555555]">
+          <p class="font-poppins font-normal text-[14px] leading-none text-center text-[#3E3232]">
             {logro.label}
           </p>
         </article>
@@ -61,7 +61,7 @@ const { items = [] } = Astro.props as Props;
 </div>
 
 <style>
-  /* Solo lo que Tailwind no puede hacer */
+
   .cards-grid {
     display: grid;
     justify-items: center;

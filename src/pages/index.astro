@@ -1,6 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { Logros as logrosData } from "@/mocks/logros.mock";
+import { getLogros } from "@/services/logros.service";
 
 import {
 	Welcome,
@@ -14,6 +14,8 @@ import {
 	PreguntasFrecuentes,
 	Contactanos
 } from '@/components';
+
+const logrosData = await getLogros();
 ---
 
 <Layout>

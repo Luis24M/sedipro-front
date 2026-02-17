@@ -8,6 +8,8 @@
 @theme {
   /* --- TIPOGRAFÍA --- */
   --font-sans: "Inter", sans-serif;
+  --background-blue-lineal: linear-gradient(180deg, #3454A1 0%, #1D2F5A 100%);
+  --bg-blue-horizontal: linear-gradient(90deg, #3454A1 0%, #1D2F5A 100%);
 
   /* --- COLORES PRIMARY --- */
   --color-primary-50: #EBF1FD;
@@ -132,4 +134,12 @@
   @media (width >= 1440px) {
     gap: 20px; /* XL y XXL */
   }
+}
+
+@utility bg-blue-lineal {
+  background: var(--background-blue-lineal);
+}
+
+@utility bg-blue-horizontal {
+  background: var(--bg-blue-horizontal);
 }

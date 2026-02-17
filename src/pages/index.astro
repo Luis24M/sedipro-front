@@ -1,7 +1,5 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { getLogros } from "@/services/logros.service";
-
 import {
 	Welcome,
 	Nosotros,
@@ -13,10 +11,13 @@ import {
 	Noticias,
 	PreguntasFrecuentes,
 	Contactanos,
-	Footer,
 } from '@/components';
 
+import { getLogros } from "@/services/logros.service";
+import { getPartners } from '@/services/partner.service';
+
 const logrosData = await getLogros();
+const partnersData = await getPartners();
 ---
 
 <Layout>
@@ -25,10 +26,9 @@ const logrosData = await getLogros();
 	<Logros items={logrosData} />
 	<Reconocimientos />
 	<Directiva />
-	<Aliados />
+	<Aliados partners={partnersData}/>
 	<ProximosEventos />
 	<Noticias />
 	<PreguntasFrecuentes />
 	<Contactanos />
-	<Footer />
 </Layout>

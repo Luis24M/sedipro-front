@@ -71,6 +71,10 @@
   --text-16: 16px;
   --text-14: 14px;
   --text-12: 12px;
+
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1440px;
 }
 
 /* --- UTILITIES --- */
@@ -142,4 +146,18 @@
 
 @utility bg-blue-horizontal {
   background: var(--bg-blue-horizontal);
+}
+
+.section-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 100px;
+
+  @media (max-width: 1024px) {
+    padding: 16px 64px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 8px 20px;
+  }
 }

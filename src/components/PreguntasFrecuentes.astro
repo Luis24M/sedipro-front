@@ -1,4 +1,5 @@
 ---
+import Title from "@/components/ui/Title.astro";
 const faqs = [
   {
     question: "¿Quiénes pueden formar parte de SEDIPRO UNT?",
@@ -28,13 +29,10 @@ const faqs = [
 ---
 
 <section class="bg-primary-50 py-12 px-5 md:px-12 lg:px-20">
-  <div class="max-w-7xl mx-auto">
+  <div class="max-w-7xl mx-auto section-content">
     
     <div class="mb-8">
-      <h2 class="text-28 md:text-h1 font-bold text-neutral-1000">
-        PREGUNTAS FRECUENTES
-      </h2>
-      <div class="w-20 h-0.75 bg-accent-300 mt-1"></div>
+      <Title title="Preguntas Frecuentes" />
     </div>
 
     <!-- Accordion -->

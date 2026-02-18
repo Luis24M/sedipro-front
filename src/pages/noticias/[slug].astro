@@ -1,7 +1,15 @@
 ---
 import { DateNoticia } from '@/components/ui/DateNoticia';
 import Layout from '@/layouts/Layout.astro';
-import { getNoticiaById } from '@/services/noticia.service';
+import { getNoticiaById, getNoticias } from '@/services/noticia.service';
+
+export async function getStaticPaths() {
+  const noticias = await getNoticias();
+
+  return noticias.map((noticia) => ({
+    params: { slug: noticia.id.toString() }
+  }));
+}
 
 const { slug } = Astro.params;
 

@@ -1,51 +1,31 @@
 ---
 import Title from "@/components/ui/Title.astro";
-const faqs = [
-  {
-    question: "¿Quiénes pueden formar parte de SEDIPRO UNT?",
-    answer: "Todos los estudiantes de la Universidad Nacional de Trujillo interesados en la gestión de proyectos pueden formar parte de SEDIPRO UNT, sin importar su carrera o ciclo académico."
-  },
-  {
-    question: "¿Qué actividades realiza SEDIPRO UNT?",
-    answer: "SEDIPRO UNT organiza talleres, conferencias, webinars, proyectos colaborativos y eventos de networking relacionados con la dirección de proyectos, metodologías ágiles y buenas prácticas PMI."
-  },
-  {
-    question: "¿Qué beneficios obtengo al unirme a SEDIPRO UNT?",
-    answer: "Al unirte obtienes acceso a capacitaciones especializadas, certificados de participación, networking con profesionales del área, experiencia práctica en gestión de proyectos y oportunidades de crecimiento profesional."
-  },
-  {
-    question: "¿Qué requisitos debo cumplir para participar en las actividades?",
-    answer: "Solo necesitas ser estudiante de la UNT y tener interés en aprender sobre gestión de proyectos. Algunas actividades específicas pueden requerir inscripción previa o conocimientos básicos."
-  },
-  {
-    question: "¿SEDIPRO UNT ofrece certificaciones?",
-    answer: "Sí, ofrecemos certificados de participación en nuestros eventos y talleres. Además, brindamos orientación para obtener certificaciones profesionales PMI como CAPM y PMP."
-  },
-  {
-    question: "¿SEDIPRO UNT trabaja en proyectos reales?",
-    answer: "Sí, desarrollamos proyectos reales con impacto social, académico y ambiental, aplicando metodologías profesionales de gestión de proyectos en colaboración con diversas instituciones."
-  }
-];
+
+interface Props {
+  preguntas: Pregunta[];
+}
+
+const { preguntas } = Astro.props;
 ---
 
-<section class="bg-primary-50 py-12 px-5 md:px-12 lg:px-20">
+<section class="bg-white py-12 px-5 md:px-12 lg:px-20">
   <div class="max-w-7xl mx-auto section-content">
     
-    <div class="mb-8">
+    <div class="mb-4">
       <Title title="Preguntas Frecuentes" />
     </div>
 
     <!-- Accordion -->
     <div class="space-y-0">
-      {faqs.map((faq, index) => (
+      {preguntas.map((faq, index) => (
         <div class="faq-item border-b border-neutral-300">
           <button
-            class="faq-button w-full flex justify-between items-center py-5 text-left transition-colors hover:bg-white/50"
+            class="faq-button w-full flex justify-between items-center py-5 text-left transition-colors hover:bg-white/50 pr-3.5"
             data-index={index}
             aria-expanded="false"
           >
             
-            <span class="text-14 md:text-16 font-medium text-neutral-900 pr-4">
+            <span class="text-14 md:text-16 font-medium text-neutral-900 pr-4 px-4">
               {faq.question}
             </span>
             
@@ -57,13 +37,14 @@ const faqs = [
             </div>
           
           </button>
+          
           <div 
             class="faq-answer overflow-hidden transition-all duration-300 ease-in-out"
             style="max-height: 0;"
             data-index={index}
           >
-            <div class="pb-5 pr-12">
-              <p class="text-14 md:text-base text-neutral-700 leading-relaxed">
+            <div class="pb-5 pr-12 pt-3">
+              <p class="text-14 md:text-base text-neutral-700 leading-relaxed px-4">
                 {faq.answer}
               </p>
             </div>

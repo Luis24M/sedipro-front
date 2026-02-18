@@ -1,43 +1,54 @@
 ---
 import '@/styles/global.css';
 import Footer from '@/components/Footer.astro';
-import Navbar from '@/components/Navbar.astro'; 
+import Navbar from '@/components/Navbar.astro';
 import MobileMenu from '@/components/MobileMenu.astro';
-import { Welcome } from '@/components';
 
+const { backgroundNavBar, isSection, title, description, imageUrl } = Astro.props;
+const currentUrl = Astro.url.href;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="/Imagenes/logo.png" />
-		<link rel="icon" href="/Imagenes/logo.png" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-		<title>Sedipro UNT</title>
-	</head>
-	<body class="bg-primary-50 min-h-screen flex flex-col">
-		<MobileMenu />
-		<Navbar />
-		
-		<main class="grow">
-			<slot />
-		</main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/Imagenes/logo.png" />
+    <link rel="icon" href="/Imagenes/logo.png" />
+    <meta name="generator" content={Astro.generator} />
 
-		<Footer />
-	</body>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:type" content="article" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    /><title>Sedipro UNT</title></head
+  >
 </html>
+<body class="bg-primary-50 min-h-screen flex flex-col">
+  <MobileMenu />
+  <Navbar background={backgroundNavBar} isSection={isSection} />
+
+  <main class="grow">
+    <slot />
+  </main>
+
+  <Footer />
+</body>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>

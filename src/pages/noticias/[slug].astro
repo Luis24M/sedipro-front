@@ -1,0 +1,77 @@
+---
+import { DateNoticia } from '@/components/ui/DateNoticia';
+import Layout from '@/layouts/Layout.astro';
+import { getNoticiaById } from '@/services/noticia.service';
+
+const { slug } = Astro.params;
+
+if (!slug) {
+  throw new Error('ID de noticia no proporcionado');
+}
+
+const id = parseInt(slug);
+const noticia = await getNoticiaById(id);
+
+const currentUrl = Astro.url.href;
+const encodedUrl = encodeURIComponent(currentUrl);
+const encodedTitle = encodeURIComponent(noticia.title);
+---
+
+<Layout
+  backgroundNavBar="url('/Imagenes/banner-noticias.png')"
+  isSection={true}
+  title={noticia.title}
+  description={noticia.description}
+  imageUrl={noticia.imageUrl}
+>
+  <section class="section-content">
+    <img
+      src={noticia.imageUrl}
+      alt={noticia.title}
+      class="w-full h-auto rounded-lg mb-4"
+    />
+    <DateNoticia date={noticia.publishedAt} />
+    <h1 class="text-3xl font-bold mb-4">{noticia.title}</h1>
+    <p class="text-lg text-gray-800">{noticia.content}</p>
+
+    <!-- compartir -->
+    <h4 class="mt-6 text-gray-600">Compartir:</h4>
+    <div class="mt-2 flex items-center gap-4">
+      <a
+        href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="/icons/facebook.svg" alt="Facebook" />
+      </a>
+
+      <a
+        href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="/icons/linkedin.svg" alt="LinkedIn" />
+      </a>
+
+      <button id="copy-btn" class="text-gray-600 hover:text-gray-800">
+        <img src="/icons/link.svg" alt="Copiar URL" />
+      </button>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const btn = document.getElementById('copy-btn');
+
+  btn?.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      btn.innerHTML = '✔';
+      setTimeout(() => {
+        btn.innerHTML = '<img src="/icons/link.svg" alt="Copiar URL" />';
+      }, 2000);
+    } catch (err) {
+      console.error('Error copiando enlace', err);
+    }
+  });
+</script>

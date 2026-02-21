@@ -1,8 +1,6 @@
 import type { DirectivaMember } from '@/Interfaces/directiva.interface';
 
 // Estilo avataaars: ilustración plana con cabello, ropa y rasgos faciales
-// Parámetros para mujeres: topType=LongHairStraight, clotheType=BlazerShirt
-// Parámetros para hombres: topType=ShortHairShortFlat, clotheType=BlazerShirt
 const FEMALE_AVATAR = (seed: string) =>
   `https://api.dicebear.com/7.x/avataaars/svg?seed=${seed}&backgroundColor=ffb3c6&top=longHair&clothesColor=3c1645&clothingGraphic=bear&eyes=default&mouth=smile`;
 

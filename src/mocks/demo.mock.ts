@@ -1,7 +1,7 @@
 // Mock up: 
 // Es una constante
 // Utiliza un interface para definir la estructura de los objetos en el array
-
+// esto es una prueba de como se pueden usar los mocks para simular datos en una aplicación
 export const Demo: DemoItem[] = [
     {
       number: '1.2K',

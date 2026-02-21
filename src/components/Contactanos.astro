@@ -1,0 +1,117 @@
+---
+const { contacto } = Astro.props;
+
+const telLink = `tel:${contacto.phone}`;
+const waLink = `https://wa.me/${contacto.whatsapp}`;
+const mailLink = `mailto:${contacto.email}`;
+---
+
+<section class="contact-section" id="contacto">
+  <div class="section-header">
+  <h1 class="text-3xl font-bold h-28 flex items-center">
+  <span class="inline-block border-b-4 border-accent-300">
+Contáctanos </span> 
+   </h1>
+    
+    <p class="subtitle">¿Tienes dudas o quieres colaborar? Escríbenos por el canal que prefieras.</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="icon" aria-hidden="true">📞</div>
+      <h3>Llámanos</h3>
+      <p class="muted">{contacto.phone}</p>
+      <a class="btn" href={telLink}>Llamar</a>
+    </div>
+
+    <div class="card">
+      <div class="icon" aria-hidden="true">💬</div>
+      <h3>WhatsApp</h3>
+      <p class="muted">{contacto.whatsapp}</p>
+      <a class="btn" href={waLink} target="_blank" rel="noreferrer">Abrir WhatsApp</a>
+    </div>
+
+    <div class="card">
+      <div class="icon" aria-hidden="true">✉️</div>
+      <h3>Escríbenos</h3>
+      <p class="muted">{contacto.email}</p>
+      <a class="btn" href={mailLink}>Enviar correo</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-section{
+    padding: 56px 0;
+    background: #fff;
+  }
+
+  .section-header{
+    width: min(1500px, 92%);
+    margin: 0 auto 28px;
+  }
+
+  .section-header h2{
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+  }
+
+  .subtitle{
+    margin: 2px 0 0;
+    color: #4b5563;
+    font-size: 16px;
+  }
+
+  .grid{
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .card{
+    background: #f3f4f6;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 10px 22px rgba(109,40,217,.10);
+    text-align: center;
+  }
+
+  .icon{
+    font-size: 50px;
+    margin-bottom: 1px;
+  }
+
+  .card h3{
+    margin: 0 0 8px;
+    font-size: 20px;
+  }
+
+  .muted{
+    margin: 0 0 14px;
+    color: #6b7280;
+    font-size: 15px;
+  }
+
+  .btn{
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #6d28d9;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .btn:hover{
+    filter: brightness(1.05);
+  }
+
+  @media (max-width: 860px){
+    .grid{ grid-template-columns: 1fr; }
+    .contact-section{ padding: 42px 0; }
+  }
+</style>

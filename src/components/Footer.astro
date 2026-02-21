@@ -1,92 +1,72 @@
 ---
 // src/components/Footer.astro
 const currentYear = new Date().getFullYear();
-
-// Datos para las columnas del footer
-const navLinks = [
-  { name: "Inicio", href: "/" },
-  { name: "Nosotros", href: "#nosotros" },
-  { name: "Logros", href: "#logros" },
-  { name: "Noticias", href: "#noticias" },
-];
-
-const communityLinks = [
-  { name: "Directiva", href: "#directiva" },
-  { name: "Aliados", href: "#aliados" },
-  { name: "Preguntas Frecuentes", href: "#faq" },
-  { name: "Contacto", href: "#contacto" },
-];
 ---
 
-<footer class="bg-primary-500 text-white pt-16 pb-8 mt-auto">
-  <div class="main-container">
-    <!-- Grid Principal: 1 columna en móvil, 2 en tablet, 4 en desktop -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<footer class="bg-blue-lineal text-white w-full">
+  <!-- Aplicamos el padding exacto de Figma: 36px arriba/abajo y 43px lados -->
+  <div class="px-[43px] py-[36px] flex flex-col items-center text-center">
+    
+    <!-- Contenedor con el GAP de 71px entre bloques -->
+    <div class="flex flex-col items-center gap-[71px] w-full max-w-[1444px]">
       
-      <!-- Columna 1: Logo y Descripción -->
-      <div class="flex flex-col gap-6">
-        <img src="/Imagenes/logo_blanco.png" alt="Logo Sedipro" class="h-14 w-fit object-contain" />
-        <p class="text-14 text-neutral-200 leading-relaxed">
-          Sección Estudiantil de Dirección de Proyectos de la Universidad Nacional de Trujillo. 
-          Potenciando líderes bajo estándares globales del PMI.
-        </p>
+      <!-- Logo -->
+      <img src="/Imagenes/logo_blanco.png" alt="Logo Sedipro" class="h-16 md:h-20 w-auto" />
+
+      <!-- Bloque Dirección -->
+      <div class="flex flex-col gap-2">
+        <h3 class="text-18 font-bold">Dirección:</h3>
+        <div class="flex items-center justify-center gap-2 text-16 text-neutral-100">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p>123 Consectetur at ligula 10660</p>
+        </div>
       </div>
 
-      <!-- Columna 2: Navegación -->
-      <div class="flex flex-col gap-4">
-        <h3 class="text-h4 text-light-blue-300 uppercase tracking-wider font-bold">Navegación</h3>
-        <ul class="flex flex-col gap-3">
-          {navLinks.map((link) => (
-            <li>
-              <a href={link.href} class="text-14 text-neutral-100 hover:text-secondary-100 transition-colors">
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
+      <!-- Bloque Contacto -->
+      <div class="flex flex-col gap-2">
+        <h3 class="text-18 font-bold">Contacto:</h3>
+        <div class="flex flex-col gap-1 text-16 text-neutral-100">
+          <div class="flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+51 970 153 565</span>
+          </div>
+          <div class="flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span>sedipro@unitru.edu.pe</span>
+          </div>
+        </div>
       </div>
 
-      <!-- Columna 3: Comunidad -->
+      <!-- Redes Sociales -->
       <div class="flex flex-col gap-4">
-        <h3 class="text-h4 text-light-blue-300 uppercase tracking-wider font-bold">Comunidad</h3>
-        <ul class="flex flex-col gap-3">
-          {communityLinks.map((link) => (
-            <li>
-              <a href={link.href} class="text-14 text-neutral-100 hover:text-secondary-100 transition-colors">
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <!-- Columna 4: Redes Sociales -->
-      <div class="flex flex-col gap-4">
-        <h3 class="text-h4 text-light-blue-300 uppercase tracking-wider font-bold">Síguenos</h3>
-        <div class="flex gap-4">
+        <h3 class="text-18 font-bold">Síguenos en:</h3>
+        <div class="flex justify-center gap-6">
           <!-- Facebook -->
-          <a href="#" class="bg-white/10 p-3 rounded-full hover:bg-secondary-200 transition-all hover:-translate-y-1" aria-label="Facebook">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <a href="#" class="hover:text-light-blue-300 transition-colors">
+            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </a>
           <!-- Instagram -->
-          <a href="#" class="bg-white/10 p-3 rounded-full hover:bg-secondary-200 transition-all hover:-translate-y-1" aria-label="Instagram">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          <a href="#" class="hover:text-light-blue-300 transition-colors">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <!-- YouTube -->
+          <a href="#" class="hover:text-light-blue-300 transition-colors">
+            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33zM9.75 15.02V8.48L15.45 11.75l-5.7 3.27z"/></svg>
           </a>
           <!-- LinkedIn -->
-          <a href="#" class="bg-white/10 p-3 rounded-full hover:bg-secondary-200 transition-all hover:-translate-y-1" aria-label="LinkedIn">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <a href="#" class="hover:text-light-blue-300 transition-colors">
+            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1-2 2 2 2 0 0 1 2-2z"/></svg>
           </a>
         </div>
       </div>
     </div>
 
-    <!-- Línea divisoria y Copyright -->
-    <div class="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-12 text-neutral-400">
-      <p>© {currentYear} SEDIPRO UNT. Todos los derechos reservados.</p>
-      <div class="flex gap-6">
-        <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
-        <a href="#" class="hover:text-white transition-colors">Términos y Condiciones</a>
-      </div>
-    </div>
+    <!-- Separador horizontal -->
+    <div class="w-full max-w-[1358px] border-t border-white/20 mt-[71px] mb-8"></div>
+
+    <!-- Copyright -->
+    <p class="text-14 font-medium">
+      Copyright © {currentYear} SEDIPRO UNT
+    </p>
   </div>
 </footer>

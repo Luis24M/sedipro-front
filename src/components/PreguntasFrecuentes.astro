@@ -1,0 +1,118 @@
+---
+import Title from "@/components/ui/Title.astro";
+
+interface Props {
+  preguntas: Pregunta[];
+}
+
+const { preguntas } = Astro.props;
+---
+
+<section class="bg-white py-12 px-5 md:px-12 lg:px-20">
+  <div class="max-w-7xl mx-auto section-content">
+    
+    <div class="mb-4">
+      <Title title="Preguntas Frecuentes" />
+    </div>
+
+    <!-- Accordion -->
+    <div class="space-y-0">
+      {preguntas.map((faq, index) => (
+        <div class="faq-item border-b border-neutral-300">
+          <button
+            class="faq-button w-full flex justify-between items-center py-5 text-left transition-colors hover:bg-white/50 pr-3.5"
+            data-index={index}
+            aria-expanded="false"
+          >
+            
+            <span class="text-14 md:text-16 font-medium text-neutral-900 pr-4 px-4">
+              {faq.question}
+            </span>
+            
+            <div class="faq-icon shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-full bg-primary-400 flex items-center justify-center transition-transform duration-300">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path class="icon-plus" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v12M6 12h12" />
+                <path class="icon-minus hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 12h12" />
+              </svg>
+            </div>
+          
+          </button>
+          
+          <div 
+            class="faq-answer overflow-hidden transition-all duration-300 ease-in-out"
+            style="max-height: 0;"
+            data-index={index}
+          >
+            <div class="pb-5 pr-12 pt-3">
+              <p class="text-14 md:text-base text-neutral-700 leading-relaxed px-4">
+                {faq.answer}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.faq-button');
+    let currentlyOpenIndex: number | null = null;
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const index = parseInt((button as HTMLElement).dataset.index || '0');
+        const answer = document.querySelector(`.faq-answer[data-index="${index}"]`) as HTMLElement;
+        const icon = button.querySelector('.faq-icon') as HTMLElement;
+        const iconPlus = button.querySelector('.icon-plus') as HTMLElement;
+        const iconMinus = button.querySelector('.icon-minus') as HTMLElement;
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+        // Cerrar el accordion previamente abierto
+        if (currentlyOpenIndex !== null && currentlyOpenIndex !== index) {
+          const prevButton = document.querySelector(`.faq-button[data-index="${currentlyOpenIndex}"]`);
+          const prevAnswer = document.querySelector(`.faq-answer[data-index="${currentlyOpenIndex}"]`) as HTMLElement;
+          const prevIcon = prevButton?.querySelector('.faq-icon') as HTMLElement;
+          const prevIconPlus = prevButton?.querySelector('.icon-plus') as HTMLElement;
+          const prevIconMinus = prevButton?.querySelector('.icon-minus') as HTMLElement;
+          
+          if (prevAnswer) {
+            prevAnswer.style.maxHeight = '0';
+            prevButton?.setAttribute('aria-expanded', 'false');
+            prevIcon?.classList.remove('rotate-180');
+            prevIconPlus?.classList.remove('hidden');
+            prevIconMinus?.classList.add('hidden');
+          }
+        }
+
+        // Toggle actual
+        if (isOpen) {
+          answer.style.maxHeight = '0';
+          button.setAttribute('aria-expanded', 'false');
+          icon.classList.remove('rotate-180');
+          iconPlus.classList.remove('hidden');
+          iconMinus.classList.add('hidden');
+          currentlyOpenIndex = null;
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          button.setAttribute('aria-expanded', 'true');
+          icon.classList.add('rotate-180');
+          iconPlus.classList.add('hidden');
+          iconMinus.classList.remove('hidden');
+          currentlyOpenIndex = index;
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .faq-answer {
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  .faq-icon {
+    transition: transform 0.3s ease-in-out;
+  }
+</style>

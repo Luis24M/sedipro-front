@@ -8,6 +8,8 @@
 @theme {
   /* --- TIPOGRAFÍA --- */
   --font-sans: "Inter", sans-serif;
+  --background-blue-lineal: linear-gradient(180deg, #3454A1 0%, #1D2F5A 100%);
+  --bg-blue-horizontal: linear-gradient(90deg, #3454A1 0%, #1D2F5A 100%);
 
   /* --- COLORES PRIMARY --- */
   --color-primary-50: #EBF1FD;
@@ -69,6 +71,10 @@
   --text-16: 16px;
   --text-14: 14px;
   --text-12: 12px;
+
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1440px;
 }
 
 /* --- UTILITIES --- */
@@ -131,5 +137,27 @@
 
   @media (width >= 1440px) {
     gap: 20px; /* XL y XXL */
+  }
+}
+
+@utility bg-blue-lineal {
+  background: var(--background-blue-lineal);
+}
+
+@utility bg-blue-horizontal {
+  background: var(--bg-blue-horizontal);
+}
+
+.section-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 100px;
+
+  @media (max-width: 1024px) {
+    padding: 16px 64px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 8px 20px;
   }
 }

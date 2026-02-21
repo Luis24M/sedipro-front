@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import { getLogros } from "@/services/logros.service";
+import { getContacto } from "@/services/contactanos.service";
 
 import {
 	Welcome,
@@ -17,6 +18,8 @@ import {
 } from '@/components';
 
 const logrosData = await getLogros();
+const contactoData = await getContacto();
+
 ---
 
 <Layout>
@@ -29,6 +32,5 @@ const logrosData = await getLogros();
 	<ProximosEventos />
 	<Noticias />
 	<PreguntasFrecuentes />
-	<Contactanos />
-	<Footer />
+    <Contactanos contacto={contactoData} />	
 </Layout>

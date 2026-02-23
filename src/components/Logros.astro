@@ -1,5 +1,6 @@
 ---
-import type { Logro } from "@/interfaces/logros.interface";
+import Title from '@/components/ui/Title.astro';
+
 
 interface Props {
   items: Logro[];
@@ -10,17 +11,9 @@ const { items = [] } = Astro.props as Props;
 
 
 <div class="w-full bg-white">
-  
-
-  <section class="w-full max-w-[1440px] h-[118px] mx-auto flex items-center px-[98px]">
-    <h2 class="font-poppins font-bold text-xl border-b-2 border-[#7F59F8] pb-1 tracking-normal">
-      LOGROS
-    </h2>
-  </section>
-
-
-  <section class="w-full max-w-[1440px] mx-auto px-[98px] md:px-8 lg:px-[98px]">
-    <div class="cards-grid max-w-[1244px] pt-8 pb-24">
+  <section class="section-content">
+    <Title title="Logros" />
+    <div class="cards-grid pt-8 pb-24">
       {items.map((logro, index) => (
         <article
           class={`card

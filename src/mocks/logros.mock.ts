@@ -1,5 +1,3 @@
-import type { Logro } from "@/Interfaces/logros.interface";
-
 export const Logros: Logro[] = [
   {
     number: "10+",

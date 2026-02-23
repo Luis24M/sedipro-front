@@ -32,7 +32,7 @@ export const AliadosCarousel = ({ partners }: AliadosCarouselProps) => {
                   href={partner.websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center h-16 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 cursor-pointer select-none"
+                  className="flex items-center justify-center h-16 opacity-50 hover:opacity-100 transition-opacity duration-300 cursor-pointer select-none"
                 >
                   <img
                     src={partner.logoUrl}
@@ -56,7 +56,7 @@ export const AliadosCarousel = ({ partners }: AliadosCarouselProps) => {
               href={partner.websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center p-4 sm:p-6 h-24 sm:h-32 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 cursor-pointer select-none"
+              className="flex items-center justify-center p-4 sm:p-6 h-24 sm:h-32 opacity-50 hover:opacity-100 transition-opacity duration-300 cursor-pointer select-none"
             >
               <img
                 src={partner.logoUrl}

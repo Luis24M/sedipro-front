@@ -1,13 +1,12 @@
 ---
 import { AliadosCarousel } from '@/components/ui/AliadosCarousel';
 import Title from '@/components/ui/Title.astro';
-import { getPartners } from '@/services/partner.service';
 
-const partners = await getPartners();
+const { partners } = Astro.props;
 ---
 
-<section class="bg-white pb-24">
-  <div class="container mx-auto px-4">
+<section class="bg-white pb-24 ">
+  <div class="mx-auto px-4 section-content">
     <Title title="Aliados" />
 
     <AliadosCarousel client:visible partners={partners} />

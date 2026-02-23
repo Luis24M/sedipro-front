@@ -5,12 +5,17 @@ import Calendario from '@/components/ui/Calendario';
 const { eventos } = Astro.props;
 ---
 
-<section class="section-content">
-  <Title title="Próximos Eventos" />
-  <div class="relative max-w-md mx-auto">
-    <div class="absolute inset-0 bg-purple-lineal rounded-2xl scale-105 md:scale-110"></div>
-    <div class="relative">
-      <Calendario client:visible eventos={eventos} />
+<div class="bg-white">
+  <section class="section-content">
+    <Title title="Próximos Eventos" />
+    <div class="relative max-w-md mx-auto">
+      <div
+        class="absolute inset-0 bg-purple-lineal rounded-2xl scale-105 md:scale-110"
+      >
+      </div>
+      <div class="relative">
+        <Calendario client:visible eventos={eventos} />
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>

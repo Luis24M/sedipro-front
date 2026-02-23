@@ -144,6 +144,10 @@
   background: var(--background-blue-lineal);
 }
 
+@utility bg-purple-lineal {
+  background: linear-gradient(80deg, #672577 0%, #9636AD 50%, #B57CBE 100%);
+}
+
 @utility bg-blue-horizontal {
   background: var(--bg-blue-horizontal);
 }

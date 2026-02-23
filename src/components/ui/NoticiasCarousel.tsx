@@ -36,17 +36,6 @@ export const NoticiasCarousel = ({ noticias }: NoticiasCarouselProps) => {
                   <span className="font-black">↗</span> Leer más
                 </button>
 
-                {/* tags */}
-                <div className="flex items-center gap-2 mt-4 flex-wrap">
-                  {noticia.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs bg-white text-neutral-700 px-2 py-1 rounded-full shadow-xl drop-shadow-xl shadow-accent-50/30 "
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
             </a>
           </div>

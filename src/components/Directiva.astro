@@ -1,0 +1,49 @@
+---
+// src/components/Directiva.astro
+import DirectivaCard from './DirectivaCard.astro';
+import { directiva } from '@/mocks/directiva.mock';
+---
+
+<section id="directiva" class="py-20 bg-primary-50">
+  <div class="container mx-auto px-4">
+
+    <div class="mb-16 flex flex-col items-start">
+      <h2 class="text-h2 font-bold uppercase tracking-tight text-black">
+        DIRECTIVA
+      </h2>
+      <div class="w-[139px] h-[3px] bg-accent-400 mt-1"></div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-6 lg:grid-cols-4 gap-x-5 gap-y-12 justify-items-center">
+
+      {directiva.map((miembro, index) => {
+        let orderClass = '';
+        let spanClass = 'sm:col-span-2 lg:col-span-1'; // Cada item ocupa 2 de 6 espacios en tablet
+
+        // TI (index 3)
+        if (index === 3) {
+          // sm:col-start-2 lo centra en la última fila de tablet (3 columnas)
+          orderClass = 'sm:order-7 lg:order-none sm:col-start-2 lg:col-start-auto';
+        }
+        
+        // RR.PP. (index 7)
+        if (index === 7) {
+          orderClass = 'sm:order-8 lg:order-none';
+        }
+
+        return (
+          <div class={`w-full max-w-[200px] ${spanClass} ${orderClass}`}>
+            <DirectivaCard
+              name={miembro.name}
+              role={miembro.role}
+              image={miembro.image}
+              linkedin={miembro.linkedin}
+              gender={miembro.gender}
+            />
+          </div>
+        );
+      })}
+
+    </div>
+  </div>
+</section>

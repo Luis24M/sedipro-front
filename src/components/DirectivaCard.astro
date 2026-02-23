@@ -1,0 +1,68 @@
+---
+// src/components/DirectivaCard.astro
+interface Props {
+  name: string;
+  role: string;
+  image: string;
+  linkedin: string;
+  gender: 'female' | 'male';
+}
+
+const { name, role, image, linkedin, gender } = Astro.props;
+
+// Fondo del círculo: rosa para mujeres (#F7C5D9), azul claro para hombres (light-blue-100)
+const circleBg = gender === 'female' ? 'bg-[#F7C5D9]' : 'bg-light-blue-100';
+---
+
+<div class="flex flex-col items-center gap-3 w-full">
+
+  <!-- CÍRCULO del avatar: separado, independiente de la tarjeta -->
+  <div class={`w-[110px] h-[110px] sm:w-[120px] sm:h-[120px] rounded-full overflow-hidden border-[3px] border-white shadow-md flex-shrink-0 ${circleBg}`}>
+    <img
+      src={image}
+      alt={`Foto de ${name}`}
+      class="w-full h-full object-cover"
+      loading="lazy"
+    />
+  </div>
+
+  <!-- TARJETA rectangular: #672577 = accent-400 -->
+  <div class="bg-accent-400 text-white w-full rounded-xl py-4 px-3 text-center flex flex-col items-center gap-[6px] shadow-md">
+
+    <!-- Rol: negrita, uppercase -->
+    <span class="text-[12px] font-bold uppercase tracking-wide leading-tight">
+      {role}
+    </span>
+
+    <!-- Nombre -->
+    <p class="text-[12px] font-normal opacity-90 leading-snug">
+      {name}
+    </p>
+
+    <!-- Botón LinkedIn -->
+    <a
+      href={linkedin}
+      aria-label={`LinkedIn de ${name}`}
+      class="mt-1 inline-flex items-center justify-center w-[28px] h-[28px] rounded-md border-2 border-white/90 hover:bg-white/30 transition-colors duration-200"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <!-- <rect x="0" y="0" width="20" height="20" rx="4" ry="4" /> -->
+        <circle cx="7" cy="7.5" r="1.2" fill="currentColor" stroke="none" />
+        <line x1="7" y1="10.5" x2="7" y2="17" />
+        <path d="M11 10.5v6.5m0-6.5c0 0 0 0 3 0a3 3 0 0 1 3 3v3.5" />
+      </svg>
+    </a>
+
+  </div>
+</div>

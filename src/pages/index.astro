@@ -7,6 +7,7 @@ import {
 	Reconocimientos,
 	Directiva,
 	Aliados,
+	Proyectos,
 	ProximosEventos,
 	Noticias,
 	PreguntasFrecuentes,
@@ -20,6 +21,9 @@ import { getPreguntas} from '@/services/preguntas.service';
 import { getContacto } from '@/services/contactanos.service';
 import { getDirectiva } from '@/services/directiva.service';
 import { getEventos } from '@/services/evento.service';
+import { getReconocimientos } from "@/services/reconocimientos.service";
+import { getProyectos } from "@/services/proyectos.service";
+
 
 const logrosData = await getLogros();
 const directivaData = await getDirectiva();
@@ -28,15 +32,18 @@ const partnersData = await getPartners();
 const noticiasData = await getNoticias();
 const preguntasData = await getPreguntas();
 const eventosData = await getEventos();
+const reconocimientosData = await getReconocimientos();
+const proyectosData = await getProyectos();
 ---
 
 <Layout>
 	<Welcome />
 	<Nosotros />
 	<Logros items={logrosData} />
-	<Reconocimientos />
+	<Reconocimientos items={reconocimientosData}/>
 	<Directiva directiva={directivaData} />
 	<Aliados partners={partnersData}/>
+	<Proyectos items={proyectosData} />
 	<ProximosEventos eventos={eventosData} />
 	<Noticias noticias={noticiasData} />
 	<PreguntasFrecuentes preguntas={preguntasData}/>

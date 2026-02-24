@@ -1,0 +1,20 @@
+---
+import { ReconocimientosCarousel } from "@/components/ui/ReconociemientosCarousel";
+import Title from "@/components/ui/Title.astro";
+
+const { items = [] } = Astro.props;
+---
+
+<!-- WRAPPER CON FONDO BLANCO COMPLETO -->
+<div class="w-full bg-white">
+  
+  <!-- CONTENEDOR PRINCIPAL -->
+  <section class="section-content">
+    
+    <Title title="Reconocimientos" />
+
+    <ReconocimientosCarousel reconocimientos={items} client:load />
+
+  </section>
+
+</div>

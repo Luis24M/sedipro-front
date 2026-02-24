@@ -1,0 +1,20 @@
+---
+import { ProyectosCarousel } from "@/components/ui/ProyectosCarousel";
+import Title from "@/components/ui/Title.astro";
+
+const { items = [] } = Astro.props;
+---
+
+<!-- WRAPPER CON FONDO PRIMARY-50 -->
+<div class="w-full bg-primary-50">
+  
+  <!-- CONTENEDOR PRINCIPAL -->
+  <section class="section-content">
+    
+    <Title title="Proyectos" />
+
+    <ProyectosCarousel proyectos={items} client:load />
+
+  </section>
+
+</div>

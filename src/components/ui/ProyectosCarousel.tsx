@@ -10,8 +10,8 @@ export const ProyectosCarousel: React.FC<{ proyectos: any[] }> = ({ proyectos })
         loop={true}
         isAutoScroll={true}
         renderItem={(item) => (
-          <div className="w-[280px] mr-24">
-            <article className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+          <div className="w-[280px] mr-24 ">
+            <article className="bg-white min-h-[407px] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
               {/* Imagen */}
               <div className="w-full h-[180px] overflow-hidden">
                 <img 
@@ -37,18 +37,6 @@ export const ProyectosCarousel: React.FC<{ proyectos: any[] }> = ({ proyectos })
                 <p className="text-[14px] text-neutral-800 leading-relaxed mb-4 line-clamp-3">
                   {item.descripcion}
                 </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2">
-                  {item.tags?.slice(0, 3).map((tag: string, index: number) => (
-                    <span 
-                      key={index}
-                      className="px-3 py-1 text-[12px] rounded-full bg-accent-50 text-accent-400 font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
             </article>
           </div>

@@ -1,8 +1,5 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { getLogros } from "@/services/logros.service";
-import { getContacto } from "@/services/contactanos.service";
-
 import {
 	Welcome,
 	Nosotros,
@@ -14,12 +11,19 @@ import {
 	Noticias,
 	PreguntasFrecuentes,
 	Contactanos,
-	Footer,
 } from '@/components';
 
-const logrosData = await getLogros();
-const contactoData = await getContacto();
+import { getLogros } from "@/services/logros.service";
+import { getPartners } from '@/services/partner.service';
+import { getNoticias } from '@/services/noticia.service';
+import { getPreguntas} from '@/services/preguntas.service';
 
+const logrosData = await getLogros();
+
+const contactoData = await getContacto();
+const partnersData = await getPartners();
+const noticiasData = await getNoticias();
+const preguntasData = await getPreguntas();
 ---
 
 <Layout>
@@ -28,9 +32,9 @@ const contactoData = await getContacto();
 	<Logros items={logrosData} />
 	<Reconocimientos />
 	<Directiva />
-	<Aliados />
+	<Aliados partners={partnersData}/>
 	<ProximosEventos />
-	<Noticias />
-	<PreguntasFrecuentes />
-    <Contactanos contacto={contactoData} />	
+	<Noticias noticias={noticiasData} />
+	<PreguntasFrecuentes preguntas={preguntasData}/>
+	<Contactanos />
 </Layout>

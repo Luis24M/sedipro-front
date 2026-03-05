@@ -17,6 +17,7 @@ import { getLogros } from "@/services/logros.service";
 import { getPartners } from '@/services/partner.service';
 import { getNoticias } from '@/services/noticia.service';
 import { getPreguntas} from '@/services/preguntas.service';
+import { getContacto } from '@/services/contactanos.service';
 
 const logrosData = await getLogros();
 
@@ -36,5 +37,5 @@ const preguntasData = await getPreguntas();
 	<ProximosEventos />
 	<Noticias noticias={noticiasData} />
 	<PreguntasFrecuentes preguntas={preguntasData}/>
-	<Contactanos />
+	<Contactanos contacto={contactoData} />
 </Layout>

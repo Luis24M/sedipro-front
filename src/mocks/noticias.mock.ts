@@ -5,7 +5,6 @@ export const NoticiasMock: Noticia[] = [
     description: "Sedipro ha lanzado una nueva plataforma que facilita la gestión de proyectos para empresas de todos los tamaños, optimizando el flujo de trabajo remoto.",
     imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
     publishedAt: "2024-06-01T10:00:00Z",
-    tags: ["Tecnología", "Gestión", "Lanzamiento"]
   },
   {
     id: 2,
@@ -13,7 +12,6 @@ export const NoticiasMock: Noticia[] = [
     description: "La nueva actualización permite analizar métricas de rendimiento utilizando algoritmos avanzados de IA para predecir cuellos de botella.",
     imageUrl: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop",
     publishedAt: "2024-06-05T14:30:00Z",
-    tags: ["IA", "Analytics", "Innovación"]
   },
   {
     id: 3,
@@ -21,7 +19,6 @@ export const NoticiasMock: Noticia[] = [
     description: "Únete a nuestros expertos este fin de semana para aprender cómo aplicar Scrum y Kanban en equipos distribuidos globalmente.",
     imageUrl: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop",
     publishedAt: "2024-06-10T09:00:00Z",
-    tags: ["Webinar", "Agile", "Educación"]
   },
   {
     id: 4,
@@ -29,7 +26,6 @@ export const NoticiasMock: Noticia[] = [
     description: "Ya está disponible la versión beta de nuestra aplicación móvil, permitiendo a los gestores aprobar tareas desde cualquier lugar.",
     imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop",
     publishedAt: "2024-06-12T16:45:00Z",
-    tags: ["Móvil", "App", "Actualización"]
   },
   {
     id: 5,
@@ -37,7 +33,6 @@ export const NoticiasMock: Noticia[] = [
     description: "Hemos firmado un acuerdo con líderes en seguridad informática para garantizar que tus datos estén protegidos con encriptación de grado militar.",
     imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
     publishedAt: "2024-06-15T11:20:00Z",
-    tags: ["Seguridad", "Alianza", "Protección"]
   },
   {
     id: 6,
@@ -45,7 +40,6 @@ export const NoticiasMock: Noticia[] = [
     description: "Descarga nuestro último reporte sobre las tendencias que definirán el entorno laboral en la próxima década según nuestros datos.",
     imageUrl: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
     publishedAt: "2024-06-20T08:15:00Z",
-    tags: ["Reporte", "Tendencias", "Trabajo Remoto"]
   }
 ];
 
@@ -57,7 +51,6 @@ export const noticiasCompletasMock: NoticiaCompleta[] = [
     description: "Sedipro ha lanzado una nueva plataforma que facilita la gestión de proyectos para empresas de todos los tamaños.",
     imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
     publishedAt: "2024-06-01T10:00:00Z",
-    tags: ["tecnología", "gestión", "lanzamiento"],
     slug: "sedipro-lanza-nueva-plataforma-gestion",
     author: "Ana Martínez",
     content: `Tras meses de desarrollo y pruebas beta con más de 50 empresas líderes, Sedipro ha lanzado oficialmente su nueva plataforma de gestión de proyectos. Esta herramienta promete revolucionar la forma en que los equipos colaboran, ofreciendo una interfaz intuitiva y potentes funcionalidades de automatización.
@@ -72,7 +65,6 @@ La plataforma ya está disponible para el público general con planes escalables
     description: "La nueva actualización permite analizar métricas de rendimiento utilizando algoritmos avanzados de IA.",
     imageUrl: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop",
     publishedAt: "2024-06-05T14:30:00Z",
-    tags: ["ia", "analytics", "innovación"],
     slug: "integracion-ia-analisis-datos",
     author: "Carlos Ruiz",
     content: `El análisis de datos ha dado un salto cuántico con nuestra última actualización. Hemos integrado modelos de Inteligencia Artificial capaces de procesar grandes volúmenes de información en segundos, identificando patrones que serían invisibles para el ojo humano.
@@ -87,7 +79,6 @@ La seguridad de los datos ha sido una prioridad en esta implementación. Todos l
     description: "Únete a nuestros expertos para aprender cómo aplicar Scrum y Kanban en equipos distribuidos.",
     imageUrl: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop",
     publishedAt: "2024-06-10T09:00:00Z",
-    tags: ["webinar", "agile", "educación"],
     slug: "taller-gratuito-metodologias-agiles-2024",
     author: "Laura Gómez",
     content: `El mundo del desarrollo de software cambia rápidamente, y las metodologías ágiles deben adaptarse. Este fin de semana, organizamos un taller intensivo y gratuito enfocado en la aplicación de Scrum y Kanban en entornos de trabajo 100% remotos o híbridos.
@@ -102,7 +93,6 @@ Las inscripciones están abiertas hasta el viernes. No pierdas la oportunidad de
     description: "Ya está disponible la versión beta de nuestra aplicación móvil para gestores.",
     imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop",
     publishedAt: "2024-06-12T16:45:00Z",
-    tags: ["móvil", "app", "actualización"],
     slug: "nueva-app-movil-seguimiento",
     author: "Equipo de Producto",
     content: `Sabemos que la gestión de proyectos no siempre ocurre frente a un escritorio. Por eso, nos emociona anunciar el lanzamiento de nuestra aplicación móvil nativa, diseñada para mantener el control de tus proyectos desde cualquier lugar.
@@ -117,7 +107,6 @@ Actualmente disponible en beta para iOS y Android, invitamos a todos nuestros us
     description: "Acuerdo con líderes en seguridad informática para blindar tus datos.",
     imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
     publishedAt: "2024-06-15T11:20:00Z",
-    tags: ["seguridad", "alianza", "protección"],
     slug: "alianza-estrategica-ciberseguridad",
     author: "Roberto Díaz",
     content: `En un entorno digital donde las amenazas son cada vez más sofisticadas, la seguridad no es una opción, es una necesidad. Nos complace anunciar nuestra alianza estratégica con CyberSecure Global, líder mundial en protección de datos corporativos.
@@ -132,7 +121,6 @@ Esta alianza reafirma nuestro compromiso de ofrecer no solo la herramienta más 
     description: "Descarga nuestro reporte sobre las tendencias laborales de la próxima década.",
     imageUrl: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
     publishedAt: "2024-06-20T08:15:00Z",
-    tags: ["reporte", "tendencias", "trabajo remoto"],
     slug: "reporte-anual-futuro-trabajo-hibrido",
     author: "Sofía Vance",
     content: `¿Hacia dónde se dirige el mundo laboral? Hemos encuestado a más de 5,000 profesionales de TI y gerentes de proyecto para elaborar nuestro "Reporte Anual sobre el Futuro del Trabajo". Los resultados son reveladores.

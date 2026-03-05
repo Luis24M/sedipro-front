@@ -7,33 +7,35 @@ const navLinks = [
   { name: 'Reconocimientos', href: '#reconocimientos' },
   { name: 'Directiva', href: '#directiva' },
   { name: 'Aliados', href: '#aliados' },
-  { name: 'Proyectos Activos', href: '#proyectos' },
   { name: 'Próximos eventos', href: '#eventos' },
   { name: 'Noticias Sedipranas', href: '#noticias' },
-  { name: 'Contacto', href: '#contacto' },
   { name: 'Preguntas frecuentes', href: '#faq' },
+  { name: 'Contacto', href: '#contacto' },
 ];
 ---
 
-<div 
-  id="mobile-menu" 
+<div
+  id="mobile-menu"
   class="fixed top-0 right-0 h-full w-full md:max-w-[832px] bg-blue-horizontal translate-x-full transition-transform duration-500 ease-in-out overflow-y-auto z-[100] shadow-2xl">
 
-
   <div class="main-container py-6 flex flex-col h-full">
-    
+
     <!-- Header del Menú: Logo y Botón Cerrar -->
     <div class="flex justify-between items-center">
       <img src="/Imagenes/logo_blanco.png" alt="Logo Sedipro" class="h-10 w-auto" />
-      <button id="close-menu" class="text-white p-2">
+      <button id="close-menu" class="text-white p-2 cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
     </div>
 
     <!-- Enlaces de navegación -->
     <nav class="flex flex-col gap-5 mt-10">
-      {navLinks.map(link => (
-        <a href={link.href} class="text-white text-18 font-medium hover:text-secondary-100 transition-colors">
+      {navLinks.map((link, i) => (
+        <a
+          href={link.href}
+          class="nav-link text-white text-18 font-medium hover:text-secondary-100 transition-colors opacity-0 translate-x-8"
+          style={`transition-delay: ${i * 50}ms;`}
+        >
           {link.name}
         </a>
       ))}
@@ -42,62 +44,87 @@ const navLinks = [
     <!-- Footer del Menú: Idioma y Tema -->
     <div class="mt-auto pt-10 pb-6 flex items-center justify-start gap-6">
       <!-- Icono de Sol (Tema) -->
-      <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black/44 hover:bg-white/60 transition-colors">
-
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <circle cx="12" cy="12" r="5.5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-</button>
-
+      <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black/44 hover:bg-white/60 transition-colors cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5.5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
 
       <!-- Selector de Idioma -->
-        <div class="flex overflow-hidden rounded-md">
-        <!-- ES activo -->
-        <button class="w-[44px] h-[40px] bg-white text-neutral-1000 font-semibold flex items-center justify-center">
+      <div class="flex overflow-hidden rounded-md">
+        <button class="w-[44px] h-[40px] bg-white text-neutral-1000 font-semibold flex items-center justify-center cursor-pointer">
           ES
         </button>
-
-        <!-- EN inactivo -->
-        <button class="w-[44px] h-[40px] bg-neutral-500 text-white flex items-center justify-center">
+        <button class="w-[44px] h-[40px] bg-neutral-500 text-white flex items-center justify-center cursor-pointer">
           EN
         </button>
       </div>
     </div>
   </div>
-</>
+</div>
 
 <script>
   const mobileMenu = document.getElementById('mobile-menu');
   const closeBtn = document.getElementById('close-menu');
-  const menuLinks = mobileMenu?.querySelectorAll('a');
+  const navLinks = mobileMenu?.querySelectorAll('.nav-link') as NodeListOf<HTMLElement>;
+
+  function openMenu() {
+    mobileMenu?.classList.remove('translate-x-full');
+    document.body.style.overflow = 'hidden';
+
+    // Staggered slide-in animation for links
+    requestAnimationFrame(() => {
+      navLinks?.forEach((link) => {
+        link.style.transition = `opacity 0.4s ease, transform 0.4s ease`;
+        link.style.transitionDelay = link.style.transitionDelay; // keep the CSS delay
+        link.classList.remove('opacity-0', 'translate-x-8');
+        link.classList.add('opacity-100', 'translate-x-0');
+      });
+    });
+  }
 
   function closeMenu() {
+    // Reset link animations immediately
+    navLinks?.forEach((link) => {
+      link.style.transition = 'none';
+      link.classList.remove('opacity-100', 'translate-x-0');
+      link.classList.add('opacity-0', 'translate-x-8');
+    });
+
     mobileMenu?.classList.add('translate-x-full');
-    document.body.style.overflow = 'auto'; // Habilita el scroll
+    document.body.style.overflow = 'auto';
   }
+
+  // Open button (in Navbar)
+  const openBtn = document.getElementById('open-menu');
+  openBtn?.addEventListener('click', openMenu);
 
   closeBtn?.addEventListener('click', closeMenu);
 
-  // Cerrar el menú si se hace clic en un enlace
-  menuLinks?.forEach(link => {
-    link.addEventListener('click', closeMenu);
+  // Click on link: close menu + smooth scroll
+  navLinks?.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const href = link.getAttribute('href');
+      closeMenu();
+
+      if (href) {
+        const target = document.querySelector(href);
+        if (target) {
+          // Wait for menu close animation to finish
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 300);
+        }
+      }
+    });
   });
 </script>

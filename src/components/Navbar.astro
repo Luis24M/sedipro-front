@@ -20,13 +20,3 @@ const { background, isSection } = Astro.props;
     </button>
   </div>
 </header>
-
-<script>
-  const openBtn = document.getElementById('open-menu');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  openBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.remove('translate-x-full');
-    document.body.style.overflow = 'hidden'; // Evita scroll al estar abierto
-  });
-</script>

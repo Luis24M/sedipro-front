@@ -1,11 +1,11 @@
 export const Logros: Logro[] = [
   {
-    number: "10+",
+    number: "12",
     label: "Años de experiencia",
     icon: "\uD83C\uDFC6", 
   },
   {
-    number: "100+",
+    number: "108",
     label: "Miembros activos",
     icon: "\uD83D\uDC65", 
   },

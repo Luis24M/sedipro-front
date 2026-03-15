@@ -3,11 +3,15 @@
 import type { DirectivaMember } from '@/Interfaces/directiva.interface';
 import DirectivaCard from './DirectivaCard.astro';
 const { directiva } = Astro.props;
+
+// Nota: Para que el centrado funcione bien con 7 miembros, 
+// simplemente los recorremos. Flexbox se encargará del resto.
 ---
 
 <section id="directiva" class="py-20 bg-primary-50">
-  <div class="section-content mx-auto px-4">
+  <div class="section-content mx-auto px-4 max-w-[1440px]">
 
+    <!-- Título y Línea (Alineados a la izquierda) -->
     <div class="mb-16 flex flex-col items-start">
       <h2 class="text-h2 font-bold uppercase tracking-tight text-black">
         DIRECTIVA
@@ -15,36 +19,37 @@ const { directiva } = Astro.props;
       <div class="w-[139px] h-[3px] bg-accent-400 mt-1"></div>
     </div>
 
-    <div class="grid grid-cols-2 sm:grid-cols-6 lg:grid-cols-4 gap-x-5 gap-y-12 justify-items-center">
-
-      {directiva.map((miembro: DirectivaMember, index: number) => {
-        let orderClass = '';
-        let spanClass = 'sm:col-span-2 lg:col-span-1'; // Cada item ocupa 2 de 6 espacios en tablet
-
-        // TI (index 3)
-        if (index === 3) {
-          // sm:col-start-2 lo centra en la última fila de tablet (3 columnas)
-          orderClass = 'sm:order-7 lg:order-none sm:col-start-2 lg:col-start-auto';
-        }
-        
-        // RR.PP. (index 7)
-        if (index === 7) {
-          orderClass = 'sm:order-8 lg:order-none';
-        }
-
-        return (
-          <div class={`w-full max-w-[200px] ${spanClass} ${orderClass}`}>
-            <DirectivaCard
-              name={miembro.name}
-              role={miembro.role}
-              image={miembro.image}
-              linkedin={miembro.linkedin}
-              gender={miembro.gender}
-            />
-          </div>
-        );
-      })}
-
+    <!-- CONTENEDOR FLEX: justify-center es la clave aquí -->
+    <div class="flex flex-wrap justify-center gap-x-5 gap-y-16">
+      {directiva.map((miembro: DirectivaMember) => (
+        <div class="
+          /* Móvil: 2 por fila (50% menos el gap) */
+          w-[calc(50%-1.25rem)] 
+          /* Tablet: 3 por fila (33.3% menos el gap) */
+          sm:w-[calc(33.33%-1.25rem)] 
+          /* Desktop: 4 por fila (25% menos el gap) */
+          lg:w-[calc(25%-1.25rem)] 
+          /* Tamaño máximo para que no se vean gigantes */
+          max-w-[240px] 
+          flex justify-center
+        ">
+          <DirectivaCard
+            name={miembro.name}
+            role={miembro.role}
+            image={miembro.image}
+            linkedin={miembro.linkedin}
+            gender={miembro.gender}
+          />
+        </div>
+      ))}
     </div>
+    
   </div>
 </section>
+
+<style>
+  .section-content {
+    /* Aseguramos que el contenido respete los márgenes de tu tabla de Figma */
+    width: 100%;
+  }
+</style>

@@ -5,7 +5,6 @@ import { getNoticiaById, getNoticias } from '@/services/noticia.service';
 
 export async function getStaticPaths() {
   const noticias = await getNoticias();
-
   return noticias.map((noticia) => ({
     params: { slug: noticia.id.toString() }
   }));
@@ -19,10 +18,6 @@ if (!slug) {
 
 const id = parseInt(slug);
 const noticia = await getNoticiaById(id);
-
-const currentUrl = Astro.url.href;
-const encodedUrl = encodeURIComponent(currentUrl);
-const encodedTitle = encodeURIComponent(noticia.title);
 ---
 
 <Layout
@@ -42,28 +37,35 @@ const encodedTitle = encodeURIComponent(noticia.title);
     <h1 class="text-3xl font-bold mb-4">{noticia.title}</h1>
     <p class="text-lg text-gray-800">{noticia.content}</p>
 
-    <!-- compartir -->
-    <h4 class="mt-6 text-gray-600">Compartir:</h4>
+    <!-- Compartir -->
+    <h4 class="mt-6 text-gray-600">Ver publicación en:</h4>
     <div class="mt-2 flex items-center gap-4">
+
+      <!-- Facebook: link directo a la publicación -->
       <a
-        href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+        href={noticia.facebookUrl}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Ver en Facebook"
       >
         <img src="/icons/facebook.svg" alt="Facebook" />
       </a>
 
+      <!-- LinkedIn: link directo a la publicación -->
       <a
-        href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}`}
+        href={noticia.linkedinUrl}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Ver en LinkedIn"
       >
         <img src="/icons/linkedin.svg" alt="LinkedIn" />
       </a>
 
-      <button id="copy-btn" class="text-gray-600 hover:text-gray-800">
+      <!-- Copiar enlace -->
+      <button id="copy-btn" class="text-gray-600 hover:text-gray-800" aria-label="Copiar enlace">
         <img src="/icons/link.svg" alt="Copiar URL" />
       </button>
+
     </div>
   </section>
 </Layout>

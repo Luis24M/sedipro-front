@@ -1,44 +1,52 @@
+import type { Partner } from "@/Interfaces/partner.interface";
+
 export const PartnersMock: Partner[] = [
   {
     id: 1,
-    name: "Google",
-    logoUrl: "https://53.fs1.hubspotusercontent-na1.net/hubfs/53/image8-2.jpg",
-    websiteUrl: "https://google.com"
+    name: "DATUX PERÚ",
+    logoUrl: "/Imagenes/aliados/datux peru.jpg.jpeg",
+    websiteUrl: "https://www.datuxonline.com/",
   },
   {
     id: 2,
-    name: "Vercel",
-    logoUrl: "https://assets.vercel.com/image/upload/v1588853331/repositories/vercel/logo.png",
-    websiteUrl: "https://vercel.com"
+    name: "Fundación WE",
+    logoUrl: "/Imagenes/aliados/FUNDACION WE.png",
+    websiteUrl: "https://www.fundacionwe.org/",
   },
   {
     id: 3,
-    name: "GitHub",
-    logoUrl: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
-    websiteUrl: "https://github.com"
+    name: "ITNOVA PLUS",
+    logoUrl: "/Imagenes/aliados/itnova.webp",
+    websiteUrl: "https://itnovaplus.com/",
   },
   {
     id: 4,
-    name: "Amazon",
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
-    websiteUrl: "https://amazon.com"
+    name: "PROJECT NOW",
+    logoUrl: "/Imagenes/aliados/Project Now.png",
+    websiteUrl: "https://www.academiaprojectnow.com/",
   },
   {
     id: 5,
-    name: "Microsoft",
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg",
-    websiteUrl: "https://microsoft.com"
+    name: "Genialmente",
+    logoUrl: "/Imagenes/aliados/genialCv.png",
+    websiteUrl: "https://cvgenial.com/",
   },
   {
     id: 6,
-    name: "DigitalOcean",
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/f/ff/DigitalOcean_logo.svg",
-    websiteUrl: "https://digitalocean.com"
+    name: "GESCONVIAL",
+    logoUrl: "/Imagenes/aliados/Logo-Gesconvial.png",
+    websiteUrl: "https://gesconvial.com.pe/#dipipopup-8748",
   },
   {
     id: 7,
-    name: "Stripe",
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg",
-    websiteUrl: "https://stripe.com"
-  }
+    name: "LABORAL AI",
+    logoUrl: "/Imagenes/aliados/laboral-ai-opengraph.png",
+    websiteUrl: "https://www.laboral.ai/",
+  },
+  {
+    id: 8,
+    name: "Good Finances",
+    logoUrl: "/Imagenes/aliados/goodfinance_pe_logo.jpg.jpeg",
+    websiteUrl: "https://goodfinanceacademy.com/",
+  },
 ];

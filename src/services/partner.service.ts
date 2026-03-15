@@ -1,6 +1,5 @@
-import { PartnersMock } from "@/mocks/partner.mock"
+import { PartnersMock } from "@/mocks/partner.mock";
 
 export const getPartners = async () => {
-  const response = PartnersMock
-  return response;
-}
+  return PartnersMock;
+};

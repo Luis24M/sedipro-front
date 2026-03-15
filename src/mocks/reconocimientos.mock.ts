@@ -1,32 +1,25 @@
 export const Reconocimientos = [
   {
-    titulo: "Mejor Grupo Estudiantil 2024",
-    fecha: "Diciembre 2024",
-    descripcion: "Reconocimiento otorgado por la Universidad por excelencia académica y gestión de proyectos.",
-    icono: "copa",
-  },
-  {
-    titulo: "Premio a la Innovación",
-    fecha: "Noviembre 2024",
-    descripcion: "Primer lugar en el concurso nacional de innovación en dirección de proyectos.",
-    icono: "medalla",
-  },
-  {
-    titulo: "Certificación PMI",
+    titulo: 'MEJOR VOLUNTARIADO UNIVERSITARIO 2024: PROYECTO "MIS AMIGOS LOS LIBROS"',
     fecha: "Octubre 2024",
-    descripcion: "Reconocimiento como capítulo estudiantil certificado por el Project Management Institute.",
-    icono: "estrella",
+    imagen: "/Imagenes/reconocimientos/mis-amigos-los-libros.png",
+    descripcion:
+      'Reconocimiento otorgado por la Municipalidad Provincial de Trujillo en el Premio Provincial al Voluntariado, que distingue a organizaciones comprometidas con la promoción del servicio voluntario en la ciudad. SEDIPRO UNT fue premiado con el proyecto "Mis Amigos los Libros", una iniciativa que promovió la lectura infantil en más de 90 estudiantes de 3er grado del colegio Liceo Trujillo mediante un concurso de cuentos, un full day de talleres lúdicos y vivenciales, y la donación de más de 100 libros a la institución educativa.',
   },
   {
-    titulo: "Mejor Taller del Año",
-    fecha: "Septiembre 2024",
-    descripcion: "Reconocimiento por el taller 'Metodologías Ágiles en la Práctica' con más de 200 asistentes.",
-    icono: "copa",
+    titulo: 'MEJOR VOLUNTARIADO UNIVERSITARIO 2025: PROYECTO "AMIGOS DE LA TECNOLOGÍA"',
+    fecha: "Noviembre 2025",
+    imagen: "/Imagenes/reconocimientos/amigos-de-la-tecnologia.jpg",
+    descripcion:
+      'Reconocimiento otorgado por la Municipalidad Provincial de Trujillo en el Premio Provincial al Voluntariado, que distingue a organizaciones comprometidas con el desarrollo y promoción del servicio voluntario en la ciudad. SEDIPRO UNT recibió este galardón con el proyecto "Amigos de la Tecnología", una iniciativa orientada a reducir la brecha digital en más de 40 adultos mayores mediante capacitaciones presenciales en el uso de herramientas tecnológicas básicas en teléfonos inteligentes, redes sociales y servicios digitales.',
   },
   {
-    titulo: "Alianza Estratégica",
-    fecha: "Agosto 2024",
-    descripcion: "Convenio firmado con empresas líderes del sector tecnológico para prácticas profesionales.",
-    icono: "medalla",
-  },
+  titulo: '3er PUESTO EN EL IPMC 2025',
+  fecha: "Fecha del reconocimiento",
+  imagen: "/Imagenes/reconocimientos/reconocimiento3.jpeg",
+  descripcion:
+    'El equipo de SEDIPRO UNT obtuvo el 3.er puesto en el IPMC 2025, destacando por su alto nivel de preparación, compromiso y trabajo en equipo. Este reconocimiento refleja la dedicación de sus integrantes y su capacidad para afrontar desafíos en el ámbito de la gestión de proyectos, consolidando su crecimiento profesional y representando con orgullo a la comunidad universitaria.',
+}
+
+
 ];

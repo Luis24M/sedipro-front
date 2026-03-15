@@ -1,14 +1,26 @@
 import { noticiasCompletasMock, NoticiasMock } from "@/mocks/noticias.mock";
+import type { Noticia, NoticiaCompleta } from "@/Interfaces/noticia.interface";
 
-export const getNoticias = async () => {
-  const response = NoticiasMock;
-  return response;
-}
+const API_URL = import.meta.env.PUBLIC_API_URL;
 
-export const getNoticiaById = async (id: number) => {
-  const noticia = noticiasCompletasMock.find(n => n.id === id);
-  if (!noticia) {
-    throw new Error('Noticia no encontrada');
+export const getNoticias = async (): Promise<Noticia[]> => {
+  try {
+    const res = await fetch(`${API_URL}/noticias`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+  } catch {
+    return NoticiasMock;
   }
-  return noticia;
-}
+};
+
+export const getNoticiaById = async (id: number): Promise<NoticiaCompleta> => {
+  try {
+    const res = await fetch(`${API_URL}/noticias/${id}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+  } catch {
+    const noticia = noticiasCompletasMock.find((n) => n.id === id);
+    if (!noticia) throw new Error("Noticia no encontrada");
+    return noticia;
+  }
+};

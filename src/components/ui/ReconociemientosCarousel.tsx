@@ -48,7 +48,7 @@ const ReconocimientoCard = ({ item }: { item: Reconocimiento }) => {
           {item.name}
         </h3>
 
-        <p className="text-[12px] text-neutral-600 mb-3">{item.publishDate}</p>
+        <p className="text-[12px] text-neutral-600 mb-3">{item.publish_date}</p>
 
         {/* Descripción truncada o completa */}
         <p
@@ -56,7 +56,7 @@ const ReconocimientoCard = ({ item }: { item: Reconocimiento }) => {
             expanded ? "" : "line-clamp-4"
           }`}
         >
-          {item.longDescription}
+          {item.description}
         </p>
 
         {/* Botón Ver más / Ver menos */}

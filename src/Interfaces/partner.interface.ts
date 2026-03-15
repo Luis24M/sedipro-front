@@ -1,6 +1,7 @@
 export interface Partner {
   id: number;
   name: string;
-  logoUrl: string;
-  websiteUrl: string;
+  url: string;
+  image_url: string;
+  is_active: boolean;
 }

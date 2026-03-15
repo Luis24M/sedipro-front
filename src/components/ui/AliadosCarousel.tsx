@@ -26,14 +26,14 @@ const PartnerCard = ({ partner }: { partner: Partner }) => {
 
   return (
     <a
-      href={partner.websiteUrl}
+      href={partner.url}
       target="_blank"
       rel="noopener noreferrer"
       title={partner.name}
       className="flex items-center justify-center p-4 rounded-xl opacity-60 hover:opacity-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 cursor-pointer select-none bg-white"
     >
       <img
-        src={partner.logoUrl}
+        src={partner.image_url}
         alt={partner.name}
         className="h-14 w-auto max-w-[160px] object-contain pointer-events-none"
         loading="lazy"

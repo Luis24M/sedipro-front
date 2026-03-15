@@ -1,7 +1,8 @@
 export interface DirectivaMember {
+  id: string
   name: string;
-  role: string;
-  image: string;
-  linkedin: string;
-  gender: 'female' | 'male';
+  rank: string;
+  url: string;
+  is_active: string;
+  url_linked: string;
 }

@@ -22,16 +22,16 @@ export const NoticiasCarousel = ({ noticias }: NoticiasCarouselProps) => {
               className="flex flex-col w-full h-full hover:opacity-100 transition-opacity duration-300"
             >
               <img
-                src={noticia.imageUrl}
-                alt={noticia.title}
+                src={noticia.image_url}
+                alt={noticia.name}
                 className="object-cover pointer-events-none h-80 rounded-t-xl"
                 loading="lazy"
               />
               <div className="px-4 py-8 bg-white rounded-b-xl flex flex-col flex-1">
                 <h2 className="text-lg font-bold line-clamp-2 h-14">
-                  {noticia.title}
+                  {noticia.name}
                 </h2>
-                <DateNoticia date={noticia.publishedAt} />
+                <DateNoticia date={noticia.publishDate} />
                 <p className="text-sm line-clamp-3 h-16 my-4 text-neutral-900">
                   {noticia.description}
                 </p>

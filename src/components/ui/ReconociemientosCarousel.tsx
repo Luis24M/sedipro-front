@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Carousel } from "@/components/ui/Carousel";
-import type { Reconocimiento } from "@/Interfaces/reconocimiento.interface";
 
 interface ReconocimientosCarouselProps {
   reconocimientos: Reconocimiento[];
@@ -29,8 +28,8 @@ const ReconocimientoCard = ({ item }: { item: Reconocimiento }) => {
       {/* Imagen izquierda — se estira con la card */}
       <div className="w-[38%] flex-shrink-0 relative overflow-hidden bg-primary-100 self-stretch">
         <img
-          src={item.imagen}
-          alt={item.titulo}
+          src={item.image_url}
+          alt={item.name}
           className="w-full h-full object-cover"
           loading="lazy"
           onError={handleImgError}
@@ -46,10 +45,10 @@ const ReconocimientoCard = ({ item }: { item: Reconocimiento }) => {
       {/* Contenido derecho */}
       <div className="flex flex-col justify-start p-5 flex-1 min-w-0">
         <h3 className="font-bold text-[15px] leading-snug text-neutral-1000 mb-1 line-clamp-3">
-          {item.titulo}
+          {item.name}
         </h3>
 
-        <p className="text-[12px] text-neutral-600 mb-3">{item.fecha}</p>
+        <p className="text-[12px] text-neutral-600 mb-3">{item.publishDate}</p>
 
         {/* Descripción truncada o completa */}
         <p
@@ -57,7 +56,7 @@ const ReconocimientoCard = ({ item }: { item: Reconocimiento }) => {
             expanded ? "" : "line-clamp-4"
           }`}
         >
-          {item.descripcion}
+          {item.longDescription}
         </p>
 
         {/* Botón Ver más / Ver menos */}

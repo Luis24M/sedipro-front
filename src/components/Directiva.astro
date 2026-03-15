@@ -35,10 +35,9 @@ const { directiva } = Astro.props;
         ">
           <DirectivaCard
             name={miembro.name}
-            role={miembro.role}
-            image={miembro.image}
-            linkedin={miembro.linkedin}
-            gender={miembro.gender}
+            role={miembro.rank}
+            image={miembro.url}
+            linkedin={miembro.url_linked}
           />
         </div>
       ))}

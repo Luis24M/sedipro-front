@@ -1,6 +1,8 @@
-export interface Reconocimiento {
-  titulo: string;
-  fecha: string;
-  imagen: string;
-  descripcion: string;
+interface Reconocimiento {
+  id: string;
+  name: string;
+  publishDate: string;
+  shortDescription: string;
+  longDescription: string;
+  image_url: string;
 }

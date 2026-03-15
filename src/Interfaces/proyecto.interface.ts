@@ -1,7 +1,8 @@
-export interface Proyecto {
-  titulo: string;
-  imagen: string;
-  director: string;
-  descripcion: string;
-  tags: string[];
+interface Proyecto {
+  id: string;
+  title: string;
+  description: string;
+  release_date: string;
+  season: string;
+  image_url: string;
 }

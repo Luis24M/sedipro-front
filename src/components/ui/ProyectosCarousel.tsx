@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Carousel } from "./Carousel";
-import type { Proyecto } from "@/Interfaces/proyecto.interface";
 
 interface ProyectosCarouselProps {
   proyectos: Proyecto[];
@@ -21,8 +20,8 @@ const ProyectoCard = ({ item }: { item: Proyecto }) => {
       {/* Imagen */}
       <div className="w-full h-[200px] overflow-hidden relative bg-primary-100 flex-shrink-0">
         <img
-          src={item.imagen}
-          alt={item.titulo}
+          src={item.image_url}
+          alt={item.title}
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
           loading="lazy"
           onError={handleImgError}
@@ -39,12 +38,12 @@ const ProyectoCard = ({ item }: { item: Proyecto }) => {
       <div className="p-6 flex flex-col flex-1">
         {/* Título */}
         <h3 className="font-bold mb-1 text-[18px] text-neutral-1000 leading-snug">
-          {item.titulo}
+          {item.title}
         </h3>
 
         {/* Director */}
         <p className="mb-3 text-[13px] font-semibold text-primary-500">
-          {item.director}
+          {item.season}
         </p>
 
         {/* Descripción */}
@@ -53,7 +52,7 @@ const ProyectoCard = ({ item }: { item: Proyecto }) => {
             expanded ? "" : "line-clamp-3"
           }`}
         >
-          {item.descripcion}
+          {item.description}
         </p>
 
         {/* Botón Ver más / Ver menos */}
@@ -65,7 +64,7 @@ const ProyectoCard = ({ item }: { item: Proyecto }) => {
         </button>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 mt-4">
+        {/* <div className="flex flex-wrap gap-2 mt-4">
           {item.tags.map((tag) => (
             <span
               key={tag}
@@ -74,7 +73,7 @@ const ProyectoCard = ({ item }: { item: Proyecto }) => {
               {tag}
             </span>
           ))}
-        </div>
+        </div> */}
       </div>
     </article>
   );

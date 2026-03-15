@@ -1,30 +1,36 @@
-export const Proyectos = [
+import type { Proyecto } from "@/Interfaces/proyecto.interface";
+
+export const ProyectosMock: Proyecto[] = [
   {
-    titulo: "Sistema de Gestión Ágil",
-    imagen: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=250&fit=crop",
-    director: "Juan Pérez",
-    descripcion: "Descripción del reconocimiento dasff atoe asdf atoe asdf atoe asdf atoe asdf atoe asdfbasff atoe asdf atoe asdf",
-    tags: ["Agile", "Scrum", "Project Management"],
+    titulo: "NAVISEDIPRO 2025",
+    imagen: "/Imagenes/proyectos/navisedipro.jpeg",
+    director: "Angela Loayza",
+    descripcion:
+      "NAVISEDIPRO, proyecto emblema de SEDIPRO UNT, el cual tiene como objetivo llevar alegría y entusiasmo de la navidad a los niños y niñas mas necesitados, que carecen de recursos económicos y de actividades recreativas. Recordemos que siempre podemos hacer la diferencia en los corazones de los más pequeños.",
+    tags: ["Voluntariado", "Navidad", "Niños"],
   },
   {
-    titulo: "Plataforma de Capacitación",
-    imagen: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=250&fit=crop",
-    director: "María González",
-    descripcion: "Descripción del reconocimiento dasff atoe asdf atoe asdf atoe asdf atoe asdf atoe asdfbasff atoe asdf atoe asdf",
-    tags: ["E-learning", "EdTech", "Workshops"],
+    titulo: "SEDITALKS",
+    imagen: "/Imagenes/proyectos/LOGO_SEDITALKxS.png",
+    director: "Daniel Sánchez",
+    descripcion:
+      "SEDITALKS es un evento que ofrece conferencias estilo TED, lideradas por profesionales con amplia experiencia en gestión organizacional. El evento busca brindar a los asistentes conocimientos aplicables, oportunidades de networking, acceso a material exclusivo y dinámicas que fomentan el crecimiento profesional.",
+    tags: ["Conferencias", "TED", "Networking"],
   },
   {
-    titulo: "App Seguimiento de Proyectos",
-    imagen: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=250&fit=crop",
-    director: "Carlos Rodríguez",
-    descripcion: "Descripción del reconocimiento dasff atoe asdf atoe asdf atoe asdf atoe asdf atoe asdfbasff atoe asdf atoe asdf",
-    tags: ["Mobile", "Tracking", "Dashboard"],
+    titulo: "Proyectando Vocaciones 3.0",
+    imagen: "/Imagenes/proyectos/pv_3_logo.png",
+    director: "Cielo Abanto",
+    descripcion:
+      "Proyectando Vocaciones 3.0 es un proyecto de SEDIPRO UNT que orienta a estudiantes preuniversitarios de colegios y academias de La Libertad para que tomen una decisión informada sobre su futura carrera en la Universidad Nacional de Trujillo.",
+    tags: ["Orientación", "Preuniversitario", "UNT"],
   },
   {
-    titulo: "Sistema de Certificaciones",
-    imagen: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop",
-    director: "Ana Martínez",
-    descripcion: "Descripción del reconocimiento dasff atoe asdf atoe asdf atoe asdf atoe asdf atoe asdfbasff atoe asdf atoe asdf",
-    tags: ["Certification", "PMI", "Training"],
+    titulo: "SEDIPATITAS",
+    imagen: "/Imagenes/proyectos/sedipatitas.jpeg",
+    director: "Celine Huaman",
+    descripcion:
+      "Sedipatitas Felices es una iniciativa impulsada por la organización estudiantil SediproUNT, con el objetivo de brindar ayuda a animalitos en situación de abandono. Actualmente, un pequeño refugio cuida con amor a muchos perritos y gatitos. Nuestro proyecto busca apoyarlos a través de la recolección de alimentos, medicinas y donaciones económicas.",
+    tags: ["Animales", "Voluntariado", "Refugio"],
   },
 ];

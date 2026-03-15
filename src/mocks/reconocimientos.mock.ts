@@ -13,4 +13,13 @@ export const Reconocimientos = [
     descripcion:
       'Reconocimiento otorgado por la Municipalidad Provincial de Trujillo en el Premio Provincial al Voluntariado, que distingue a organizaciones comprometidas con el desarrollo y promoción del servicio voluntario en la ciudad. SEDIPRO UNT recibió este galardón con el proyecto "Amigos de la Tecnología", una iniciativa orientada a reducir la brecha digital en más de 40 adultos mayores mediante capacitaciones presenciales en el uso de herramientas tecnológicas básicas en teléfonos inteligentes, redes sociales y servicios digitales.',
   },
+  {
+  titulo: '3er PUESTO EN EL IPMC 2025',
+  fecha: "Fecha del reconocimiento",
+  imagen: "/Imagenes/reconocimientos/reconocimiento3.jpeg",
+  descripcion:
+    'El equipo de SEDIPRO UNT obtuvo el 3.er puesto en el IPMC 2025, destacando por su alto nivel de preparación, compromiso y trabajo en equipo. Este reconocimiento refleja la dedicación de sus integrantes y su capacidad para afrontar desafíos en el ámbito de la gestión de proyectos, consolidando su crecimiento profesional y representando con orgullo a la comunidad universitaria.',
+}
+
+
 ];

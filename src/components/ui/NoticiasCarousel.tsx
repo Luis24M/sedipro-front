@@ -46,3 +46,4 @@ export const NoticiasCarousel = ({ noticias }: NoticiasCarouselProps) => {
     </div>
   );
 };
+

@@ -28,7 +28,7 @@ export const PartnersMock: Partner[] = [
   {
     id: 5,
     name: "Genialmente",
-    logoUrl: "/Imagenes/aliados/genialCv.png",
+    logoUrl: "/Imagenes/aliados/genial.jpeg",
     websiteUrl: "https://cvgenial.com/",
   },
   {

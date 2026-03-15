@@ -73,9 +73,9 @@ export const noticiasCompletasMock: NoticiaCompleta[] = [
     publishedAt: "2026-03-06T00:00:00Z",
     slug: "ya-somos-mas-de-1k",
     author: "SEDIPRO UNT",
-    facebookUrl: "https://www.facebook.com/share/p/1AucQWgY9U/",
+    facebookUrl: "https://www.facebook.com/share/p/1Az1AE2oH5/",
     linkedinUrl:
-      "https://www.linkedin.com/posts/sediprount_sediprount-ipmc2025-orgullosedipro-activity-7435829596828119040-k_mb?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFUTHGIBFYJisst18sOd2IZwYuxA1TU81xU",
+      "https://www.linkedin.com/posts/sediprount_sediprount-gestiaejndeproyectos-unt-activity-7435829800054890496-Fpb_?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFUTHGIBFYJisst18sOd2IZwYuxA1TU81xU",
     content: `La comunidad de SEDIPRO UNT superó los 1,000 seguidores, consolidándose como un espacio en crecimiento para estudiantes interesados en la Dirección de Proyectos. Este logro refleja el compromiso y la participación activa de su comunidad, que impulsa la creación de oportunidades de aprendizaje, liderazgo y desarrollo profesional dentro de la Universidad Nacional de Trujillo. La organización reafirma así su propósito de seguir fortaleciendo el talento universitario y promoviendo la gestión de proyectos.`,
   },
   {

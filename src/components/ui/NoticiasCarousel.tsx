@@ -33,7 +33,7 @@ export const NoticiasCarousel = ({ noticias }: NoticiasCarouselProps) => {
                 </h2>
                 <DateNoticia date={noticia.publishDate} />
                 <p className="text-sm line-clamp-3 h-16 my-4 text-neutral-900">
-                  {noticia.description}
+                  {noticia.shortDescription}
                 </p>
                 <button className="bg-primary-500 text-white font-medium text-sm py-2 px-4 rounded-lg cursor-pointer">
                   <span className="font-black">↗</span> Leer más

@@ -1,4 +1,4 @@
-export const DateNoticia = ({ date }: { date: string }) => {
+export const DateNoticia = ({ date }: { date: string | Date }) => {
   if (!date) return null;
   return (
     <div className="flex items-center gap-2 justify-start my-4">
@@ -9,7 +9,9 @@ export const DateNoticia = ({ date }: { date: string }) => {
       />
       <span className="text-neutral-900 text-sm ">
         {' '}
-        {date.split('T')[0].replace(/-/g, '/')}{' '}
+        {typeof date === 'string'
+          ? date.split('T')[0].replace(/-/g, '/')
+          : date.toLocaleDateString()}{' '}
       </span>
     </div>
   );

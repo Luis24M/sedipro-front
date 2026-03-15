@@ -6,6 +6,8 @@ const API_URL = import.meta.env.PUBLIC_API_URL;
 export const getNoticias = async (): Promise<Noticia[]> => {
   try {
     if (!API_URL) throw new Error("PUBLIC_API_URL no configurada");
+    const endpoint = API_URL + "/noticias"
+    console.log("Fetching noticias from", endpoint);
     const res = await fetch(`${API_URL}/noticias`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.json();

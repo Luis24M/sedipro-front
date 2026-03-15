@@ -23,19 +23,19 @@ const noticia = await getNoticiaById(id);
 <Layout
   backgroundNavBar="url('/Imagenes/banner-noticias.png')"
   isSection={true}
-  title={noticia.title}
-  description={noticia.description}
-  imageUrl={noticia.imageUrl}
+  title={noticia.name}
+  description={noticia.longDescription}
+  imageUrl={noticia.image_url}
 >
   <section class="section-content">
     <img
-      src={noticia.imageUrl}
-      alt={noticia.title}
+      src={noticia.image_url}
+      alt={noticia.name}
       class="w-full h-auto rounded-lg mb-4"
     />
     <DateNoticia date={noticia.publishDate} />
-    <h1 class="text-3xl font-bold mb-4">{noticia.title}</h1>
-    <p class="text-lg text-gray-800">{noticia.content}</p>
+    <h1 class="text-3xl font-bold mb-4">{noticia.name}</h1>
+    <p class="text-lg text-gray-800">{noticia.longDescription}</p>
 
     <!-- Compartir -->
     <h4 class="mt-6 text-gray-600">Ver publicación en:</h4>

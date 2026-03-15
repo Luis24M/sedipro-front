@@ -1,4 +1,5 @@
 export const DateNoticia = ({ date }: { date: string }) => {
+  if (!date) return null;
   return (
     <div className="flex items-center gap-2 justify-start my-4">
       <img

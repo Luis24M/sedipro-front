@@ -33,7 +33,7 @@ const noticia = await getNoticiaById(id);
       alt={noticia.title}
       class="w-full h-auto rounded-lg mb-4"
     />
-    <DateNoticia date={noticia.publishedAt} />
+    <DateNoticia date={noticia.publishDate} />
     <h1 class="text-3xl font-bold mb-4">{noticia.title}</h1>
     <p class="text-lg text-gray-800">{noticia.content}</p>
 

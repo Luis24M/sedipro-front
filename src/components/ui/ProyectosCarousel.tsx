@@ -92,7 +92,7 @@ export const ProyectosCarousel: React.FC<ProyectosCarouselProps> = ({
           data={safeItems}
           basisClass="basis-[360px]"
           loop={true}
-          isAutoScroll={false}
+          isAutoScroll={true}
           renderItem={(item) => (
             <div className="w-[320px] mr-6">
               <ProyectoCard item={item} />

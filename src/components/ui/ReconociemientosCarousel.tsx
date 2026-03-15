@@ -19,7 +19,7 @@ const ReconocimientoCard = ({ item }: { item: Reconocimiento }) => {
 
   return (
     <article
-      className="bg-neutral-100 rounded-2xl overflow-hidden flex flex-row transition-all duration-500 w-full"
+      className="bg-neutral-100 rounded-2xl h-full overflow-hidden flex flex-row transition-all duration-500 w-full"
       style={{
         boxShadow: "0px 2px 8px 0px rgba(127, 89, 248, 0.08)",
         minHeight: "220px",
@@ -84,9 +84,9 @@ export const ReconocimientosCarousel = ({
           data={safeItems}
           basisClass="basis-[580px]"
           loop={true}
-          isAutoScroll={false}
+          isAutoScroll={true}
           renderItem={(item) => (
-            <div className="w-[540px] mr-6">
+            <div className="w-[540px] mr-6 h-full">
               <ReconocimientoCard item={item} />
             </div>
           )}
